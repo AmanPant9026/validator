@@ -1408,6 +1408,8 @@ func isPostcodeByIso3166Alpha2Field(fl FieldLevel) bool {
 		return false
 	}
 
+	postcodeRegexInit.Do(initPostcodes)
+
 	currentField, kind, _, found := fl.GetStructFieldOKAdvanced2(fl.Parent(), params[0])
 	if !found {
 		return false
